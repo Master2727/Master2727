@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tutorial Website</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f0f0;
+        text-align: center;
+        padding-top: 50px;
+    }
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .input-field {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    .button {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 18px;
+        transition: background-color 0.3s ease;
+    }
+    .button:hover {
+        background-color: #0056b3;
+    }
+    h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Tutorial Website</h1>
+        <p>Select a tutorial below to get started:</p>
+        <button class="button" onclick="window.open('https://www.example.com/tutorial1', '_blank');">Tutorial 1</button>
+        <button class="button" onclick="window.open('https://www.example.com/tutorial2', '_blank');">Tutorial 2</button>
+        <button class="button" onclick="window.open('https://www.example.com/tutorial3', '_blank');">Tutorial 3</button>
+        <button class="button" onclick="window.open('https://www.example.com/tutorial4', '_blank');">Tutorial 4</button>
+        <button class="button" onclick="window.open('https://www.example.com/tutorial5', '_blank');">Tutorial 5</button>
+        <button class="button" onclick="window.open('https://www.example.com/tutorial6', '_blank');">Tutorial 6</button>
+        <button class="button" onclick="window.open('https://www.example.com/tutorial7', '_blank');">Tutorial 7</button>
+        
+        <hr>
+        
+        <h2>Enter Login Keyword to Access</h2>
+        <form id="loginForm" onsubmit="return validateLogin()">
+            <div class="form-group">
+                <input type="password" id="keyword" class="input-field" placeholder="Enter keyword...">
+            </div>
+            <button type="submit" class="button">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function validateLogin() {
+            var keyword = document.getElementById('keyword').value.trim();
+            if (keyword.toLowerCase() === 'origin') {
+                // Redirect to the tutorial page after successful login
+                window.location.href = 'tutorial.html';
+                return false; // Prevent form submission (not necessary if not using a form)
+            } else {
+                alert('Incorrect keyword. Please try again.');
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</body>
+</html>
